@@ -122,11 +122,10 @@
   .footer__contacts._visible {
     position: fixed;
     left: 24px;
-    top: 500px;
+    top: 450px;
     transition: all .2s linear;
-
+    display: flex;
     flex-direction: column;
-    display: block;
     z-index: 20;
     transition: all .2s linear;
   }
@@ -152,10 +151,6 @@
 
   .header__contact {
     display: none;
-  }
-
-  .header__menu {
-    height: 100vh;
   }
 
   /* .................RESULT */
