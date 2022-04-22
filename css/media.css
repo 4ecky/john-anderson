@@ -2,6 +2,9 @@
   .menu._active {
     width: 37%;
   }
+  .intro__title{
+    font-size: 45px;
+  }
 }
 
 /* для маленьких мониторов */
@@ -29,11 +32,15 @@
   }
 
   /* .................HEADER */
-
+  .header__inner{
+    align-items: center;
+  }
   .header__menu-link {
     font-size: 24px;
   }
-
+  .header__contact{
+    display: none;
+  }
   /* .................INTRO */
   .intro__inner {
     flex-wrap: wrap;
@@ -66,6 +73,17 @@
     margin-bottom: 15px;
     margin-right: 15px;
   }
+
+  /* .................REVIEWS */
+  .reviews__swiper-slide {
+    margin-bottom: 20px;
+  }
+
+  /* .................FOOTER */
+
+  .footer__inner {
+    margin-top: 60px;
+  }
 }
 
 /* ниже планшетов */
@@ -94,23 +112,25 @@
   }
 
   .button--footer {
-    margin-top: 0;
+    margin-top: 10px;
   }
 
   .footer__contacts {
-    position: fixed;
-    z-index: -1;
-    left: -100%;
-    transition: all .2s linear;
+    display: none;
   }
-
   .footer__contacts._visible {
-    top: 500px;
+    position: fixed;
     left: 24px;
+    top: 500px;
+    transition: all .2s linear;
+
     flex-direction: column;
-    opacity: 1;
+    display: block;
     z-index: 20;
     transition: all .2s linear;
+  }
+  .footer__number {
+    margin-bottom: 10px;
   }
 
 
@@ -125,26 +145,30 @@
 
   /* .................HEADER */
   .header__menu {
-    width: 250px;
+    width: 300px;
   }
 
   .header__contact {
     display: none;
   }
+
   /* .................RESULT */
-  .result__inner{
+  .result__inner {
     flex-wrap: wrap;
     justify-content: center;
   }
-  .result__item{
+
+  .result__item {
     max-width: 575px;
     width: 100%;
     text-align: center;
     padding: 30px 0;
   }
-  .result__item:not(:last-child){
+
+  .result__item:not(:last-child) {
     margin-right: 0;
   }
+
   /* .................SERVICES */
   .services__item {
     flex-wrap: wrap;
@@ -160,6 +184,10 @@
   }
 
   /* .................REVIEWS */
+  .reviews__swiper-slide {
+    margin-bottom: 30px;
+  }
+
   .reviews__inner-slide {
     align-items: center;
   }
@@ -176,7 +204,9 @@
     height: 100%;
     object-fit: cover;
   }
-
+  .footer__inner{
+    margin-top: 10px;
+  }
   .footer__column {
     flex-wrap: wrap;
     justify-content: center;
@@ -189,11 +219,12 @@
 
   .footer__logo-image {
     margin-right: 0;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     text-align: center;
   }
+
   /* .............POP-UP */
-  .pop-up__body{
+  .pop-up__body {
     padding: 40px 10px 43px;
   }
 }
@@ -203,9 +234,13 @@
   /* .................HEADER */
   .header__menu {
     width: 100%;
+    height: 100vh;
   }
 
   /* .................INTRO */
+  .intro__title{
+    font-size: calc(38px + (7 + 7 * .7) * ((100vw - 375px) / 1220));
+  }
   .intro__img {
     max-width: 100%;
   }

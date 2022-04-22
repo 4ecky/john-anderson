@@ -16,7 +16,7 @@ if (iconMenu) {
     iconMenu.classList.toggle('_active');
     menuHidden.classList.toggle('_hidden');
     menuBody.classList.toggle('_active');
-    footerElem.classList.toggle('_visible');
+    footerElem.classList.add('_visible');
     document.body.classList.toggle('_lock');
   });
 
@@ -24,7 +24,7 @@ if (iconMenu) {
     iconMenu.classList.toggle('_active');
     menuHidden.classList.toggle('_hidden');
     menuBody.classList.toggle('_active');
-    footerElem.classList.toggle('_visible');
+    footerElem.classList.remove('_visible');
     document.body.classList.toggle('_lock');
   });
 }
@@ -54,6 +54,8 @@ if (menuLinks.length > 0) {
         menuBody.classList.remove('_active');
         menuHidden.classList.toggle('_hidden');
         document.body.classList.remove('_lock');
+        footerElem.classList.remove('_visible');
+
       }
 
       // кусочек кода, который заставит скролл прокрутиться к нужному месту
@@ -79,6 +81,7 @@ new Swiper('.reviews-swiper', {
     disableOnInteraction: false,
   },
   speed: 1500,
+  spaceBetween: 10,
 });
 
 
