@@ -2,7 +2,8 @@
   .menu._active {
     width: 37%;
   }
-  .intro__title{
+
+  .intro__title {
     font-size: 45px;
   }
 }
@@ -32,15 +33,14 @@
   }
 
   /* .................HEADER */
-  .header__inner{
-    align-items: center;
-  }
   .header__menu-link {
     font-size: 24px;
   }
-  .header__contact{
+
+  .header__contact {
     display: none;
   }
+
   /* .................INTRO */
   .intro__inner {
     flex-wrap: wrap;
@@ -118,6 +118,7 @@
   .footer__contacts {
     display: none;
   }
+
   .footer__contacts._visible {
     position: fixed;
     left: 24px;
@@ -129,6 +130,7 @@
     z-index: 20;
     transition: all .2s linear;
   }
+
   .footer__number {
     margin-bottom: 10px;
   }
@@ -150,6 +152,10 @@
 
   .header__contact {
     display: none;
+  }
+
+  .header__menu {
+    height: 100vh;
   }
 
   /* .................RESULT */
@@ -204,9 +210,11 @@
     height: 100%;
     object-fit: cover;
   }
-  .footer__inner{
+
+  .footer__inner {
     margin-top: 10px;
   }
+
   .footer__column {
     flex-wrap: wrap;
     justify-content: center;
@@ -238,9 +246,10 @@
   }
 
   /* .................INTRO */
-  .intro__title{
+  .intro__title {
     font-size: calc(38px + (7 + 7 * .7) * ((100vw - 375px) / 1220));
   }
+
   .intro__img {
     max-width: 100%;
   }
