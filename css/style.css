@@ -234,10 +234,11 @@ body._lock {
   z-index: 20;
   background-color: rgba(208, 165, 126, .8);
   padding-left: 24px;
-  transition: all .2s linear;
+  transition: all .1s linear;
+  overflow: auto;
 }
 
-.header__menu._active {
+.header__menu._open {
   left: 0%;
   transition: all .2s linear;
 }

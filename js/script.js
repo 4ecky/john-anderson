@@ -1,73 +1,3 @@
-// МЕНЮ БУРГЕР
-
-//  иконка бургера
-const iconMenu = document.querySelector('.header__burger');
-// иконка  X
-const menuClose = document.querySelector('.header__menu-close')
-// меню
-const menuBody = document.querySelector('.header__menu');
-// для скрытия элемента шапки
-const menuHidden = document.querySelector('.header__nav')
-// элемент из footer
-const footerElem = document.querySelector('.footer__contacts')
-if (iconMenu) {
-
-  iconMenu.addEventListener('click', function (e) {
-    iconMenu.classList.toggle('_active');
-    menuHidden.classList.toggle('_hidden');
-    menuBody.classList.toggle('_active');
-    footerElem.classList.add('_visible');
-    document.body.classList.toggle('_lock');
-  });
-
-  menuClose.addEventListener('click', function (e) {
-    iconMenu.classList.toggle('_active');
-    menuHidden.classList.toggle('_hidden');
-    menuBody.classList.toggle('_active');
-    footerElem.classList.remove('_visible');
-    document.body.classList.toggle('_lock');
-  });
-}
-
-
-// Прокрутка при клике
-const menuLinks = document.querySelectorAll('.header__menu-link[data-goto]');
-if (menuLinks.length > 0) {
-  menuLinks.forEach(menuLink => {
-    menuLink.addEventListener('click', onMenuLinkClick);
-  });
-
-  // Функция onMenuLinkClick
-  function onMenuLinkClick(e) {
-    const menuLink = e.target;
-    // условие
-    if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
-      const gotoBlock = document.querySelector(menuLink.dataset.goto);
-      // высчитываем положение объекта с учетом высоты шапки.
-      const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
-
-      //  при клике  на раздел, меню пропадает и страница переводит на выбранный пункт
-      // 1.Если объект иконки меню содержит класс _active, т.е. фактически это означает, что меню открыто, то в этот момент:
-      if (iconMenu.classList.contains('_active')) {
-        // 2. мы должны убрать классы, которые мы добавляем при открытии меню (заменить toggle на remove)
-        iconMenu.classList.remove('_active');
-        menuBody.classList.remove('_active');
-        menuHidden.classList.toggle('_hidden');
-        document.body.classList.remove('_lock');
-        footerElem.classList.remove('_visible');
-
-      }
-
-      // кусочек кода, который заставит скролл прокрутиться к нужному месту
-      window.scrollTo({
-        top: gotoBlockValue,
-        behavior: 'smooth'
-      });
-      e.preventDefault();
-    }
-  }
-}
-
 // =============================PARTII
 // Слайдеры 
 new Swiper('.reviews-swiper', {
@@ -84,7 +14,57 @@ new Swiper('.reviews-swiper', {
   spaceBetween: 10,
 });
 
+// Меню бургер
+const burger = document.querySelector('.header__burger');
+const menuNav = document.querySelector('.header__menu');
+const navLink = document.querySelectorAll('.header__menu-link');
+const menuClose = document.querySelector('.header__menu-close');
+let fromFooter = document.querySelector('.footer__contacts');
+burger.addEventListener('click', mobileMenu);
 
+function mobileMenu() {
+  burger.classList.add('_active');
+  menuNav.classList.add('_open');
+  menuClose.classList.add('_active');
+  fromFooter.classList.add('_visible');
+  document.body.classList.add('_lock');
+};
+
+// при нажатии на X, меню закрывается 
+menuClose.addEventListener('click', closeMenu);
+
+function closeMenu() {
+  burger.classList.toggle('_active');
+  menuNav.classList.toggle('_open');
+  menuClose.classList.remove('_active');
+  fromFooter.classList.remove('_visible');
+  document.body.classList.remove('_lock');
+};
+
+// при нажатии на ссылку, меню закрывается
+navLink.forEach(n => n.addEventListener('click', closeMenuForLink));
+
+function closeMenuForLink() {
+  burger.classList.remove('_active');
+  menuNav.classList.remove('_open');
+  menuClose.classList.remove('_active');
+  fromFooter.classList.remove('_visible');
+  document.body.classList.remove('_lock');
+};
+
+// плавная прокрутка к разделам
+const anchors = document.querySelectorAll('a[href*="#"]');
+
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (event) {
+    event.preventDefault();
+    const blockID = anchor.getAttribute('href');
+    document.querySelector('' + blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  });
+};
 
 // POP-UP
 // ловим кнопку
