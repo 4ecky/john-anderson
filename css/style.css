@@ -90,15 +90,22 @@ h6 {
 
 /*--------------------*/
 @font-face {
-	font-family: 'Complex';
-	src: url('../fonts/complex.eot'); /* IE 9 Compatibility Mode */
-	src: url('../fonts/complex.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
-		url('../fonts/complex.woff2') format('woff2'), /* Super Modern Browsers */
-		url('../fonts/complex.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
-		url('../fonts/complex.ttf') format('truetype'), /* Safari, Android, iOS */
-		url('../fonts/complex.svg#complex') format('svg'); /* Chrome < 4, Legacy iOS */
-    font-weight: 400;
+  font-family: 'Complex';
+  src: url('../fonts/complex.eot');
+  /* IE 9 Compatibility Mode */
+  src: url('../fonts/complex.eot?#iefix') format('embedded-opentype'),
+    /* IE < 9 */
+    url('../fonts/complex.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('../fonts/complex.woff') format('woff'),
+    /* Firefox >= 3.6, any other modern browser */
+    url('../fonts/complex.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('../fonts/complex.svg#complex') format('svg');
+  /* Chrome < 4, Legacy iOS */
+  font-weight: 400;
 }
+
 main._active {
   background: rgba(0, 0, 0, .5);
   filter: blur(4px);
@@ -360,10 +367,12 @@ body._lock {
   padding: 31px 25px 20px 30px;
   max-width: 555px;
 }
-svg{
+
+svg {
   max-width: 100%;
   max-height: 100%;
 }
+
 .services__item:not(:last-child) {
   margin-right: 15px;
 }
@@ -418,15 +427,18 @@ svg{
   align-items: center;
   flex-wrap: wrap;
 }
+
 /* .................REVIEWS */
-.reviews__swiper-slide{
+.reviews__swiper-slide {
   margin-bottom: 40px;
   cursor: pointer;
 }
+
 .reviews__inner-slide {
   display: flex;
   justify-content: space-around;
 }
+
 .reviews__text-block {
   color: #fefefe;
 }
@@ -445,7 +457,8 @@ svg{
   height: 10px;
   width: 10px;
 }
-.swiper-pagination-bullet-active{
+
+.swiper-pagination-bullet-active {
   background-color: #fff;
   border: 3px solid #fff;
 
